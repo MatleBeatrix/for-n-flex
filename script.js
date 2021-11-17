@@ -26,39 +26,83 @@ const generateArray = function (amount){
 };
 
 
-function loadEvent() {
-    //console.log(`Az oldal betöltödött.`);
-    //console.log(generateArray(100));
-    //console.log(generateArray("100"));
-    //console.log(generateArray([100]));
-    //console.log(generateArray("kiskutya"));
-    //console.log(generateArray("1 kiskutya"));
+function loadEvent(cardnumber) {
+    document.getElementById("winWindow").classList.remove("win");
+    document.getElementById("winWindow").classList.add("notwin");
 
     const root = document.getElementById("root");
-    const list = generateArray(6);
+    const list = generateArray(cardnumber);
+ 
+    const elements = document.getElementsByClassName("card");
+    while (elements.length > 0) elements[0].remove();
+
     if (list[0] !== "error") {
+        let random = Math.floor(Math.random() * cardnumber).toString();
         for (const item of list) {
-            root.insertAdjacentHTML("beforeend",`<div>${item}</div>`);
+
+            if (item === random){
+                root.insertAdjacentHTML("beforeend",`
+                <div id="good" class="card">
+                <h1>${item}</h1>
+                <img class="imagine" src="/src/happy.png" alt="logo">
+                </div>
+                `);
+            }
+            else{
+                root.insertAdjacentHTML("beforeend",`
+                <div class="card">
+                <h1>${item}</h1>
+                <img class="imagine" src="/src/sad.png" alt="logo">
+                </div>
+                `);
+
+            }
         }
     }
+
+    if (document.getElementById("good") !== null){
+        document.getElementById("good").addEventListener("click", function(){
+            document.getElementById("winWindow").classList.remove("notwin");
+            document.getElementById("winWindow").classList.add("win");
+            //button.classList.add("clicked");
+        })
+    };
+
+ 
+    document.getElementById("winbutton").addEventListener("click", function(){
+        document.getElementById("winWindow").classList.remove("win");
+        document.getElementById("winWindow").classList.add("notwin");
+            //button.classList.add("clicked");
+    })
+
+    /*
+    if (document.getElementById("good") !== null){
+        console.log("not null");
+        document.getElementById("good").addEventListener("click", function(){
+            console.log("Click");
+            root.insertAdjacentHTML("beforeend",`
+            <div id="winWindow" class="win">
+            <h1>Nyertél</h1>
+            <button type="button" id="winbutton">Ok</button>
+            </div>
+            `);
+        })
+    }
+*/
+
 }
 
-window.addEventListener("load", loadEvent);
+//window.addEventListener("load", loadEvent);
 
-/*
-::::::::::::::::TOVÁBBI VÁLTOZATÓK:::::::::::::::
+window.addEventListener("load", function(){ 
+    let number = 0;
 
-window.addEventListener("load", function(){
-    ...
-};
+    document.getElementById("numberbutton").addEventListener("click", function() {      
+        number = document.getElementById("maxnumber").value;
+        console.log(typeof number)
+        loadEvent(number);
+     })
 
-window.addEventListener("load",  () => {
-    ...
-};
+     console.log(document.getElementById("good"));
 
-HA NINCS PARAMÉTER
-````````````````````
-window.addEventListener("load", _ => {
-    ...
-};
-*/
+})
