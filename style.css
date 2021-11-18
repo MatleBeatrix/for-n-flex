@@ -134,7 +134,7 @@ body {
     color: #2A363B;
 }
 
-.imagine {
+.image {
     display: none;
 }
 
@@ -147,7 +147,7 @@ body {
     display:none;
 }
 
-.card:hover > .imagine {
+.card:hover > .image {
     display: block;
     height: 40px;
     position: relative;
