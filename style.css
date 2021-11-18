@@ -31,10 +31,10 @@ button, input, textarea, select {
 }
 
 body {
-    background-color:#FECEAB;
     background-image: url("/src/background.png");
-    background-size: 15px;
     background-repeat: space;
+    background-size: 15px;
+    background-color:#FECEAB;
 
 }
 
@@ -58,14 +58,11 @@ body {
 }
 
 #input {
+    height: 100px;
     margin-left: 20px;
     margin-right: 20px;
     padding: 10px;
-    height: 100px;
-
-
     text-align: center;
-
     
     background-color: #2A363B;
 }
@@ -80,51 +77,48 @@ body {
 }
 
 #maxnumber {
-    background-color: floralwhite;
-    height: 30px;
     width: 60px;
+    height: 30px;
     font-size: 25px;
+    
     color: #E84A5F;
+    background-color: floralwhite;
 }
 
 #numberbutton {
     padding: 2px;
     border-radius: 2px;
 
-    background-color: #99B898;
-    color: #2A363B;
-
     font-size: 20px;
+    color: #2A363B;
+    background-color: #99B898;
 }
 
 
 #root {
     display: flex;
-    flex-wrap: wrap;             /*sortörés*/   
-    /*flex-direction: column;*/
+    flex-wrap: wrap;             
     flex-direction: row;
     justify-content: center;
     align-items: center;
     min-height: 100px;
-
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
     background-color:  #FF847C;
     
 }
 
 .card {
-    
     width: 50px;
     height: 70px;
     margin: 10px;
-
     border-radius: 5px;
+
     background-color:  #FECEAB;
-    
 }
 
 .card h1 {
@@ -136,9 +130,7 @@ body {
     transform: translate(-50%, -50%);
     
     font-family: 'Fredericka the Great', cursive;
-    /*font-family: 'Road Rage', cursive;*/
     font-size: 30px;
-    
     color: #2A363B;
 }
 
@@ -160,7 +152,7 @@ body {
     height: 40px;
     position: relative;
     text-align: center;
-    
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -173,26 +165,26 @@ body {
 
 
 .win {
-    display: block;
     position: fixed;
-    padding: 20px;
+    display: block;
     text-align: center;
     width: 50vh;
+    padding: 20px;
     z-index: 100;
 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
-    background-color: #99B898;
     font-family: 'Fredericka the Great', cursive;
     font-size: 30px;
+    background-color: #99B898;
 }
 
 #winbutton {
     width: 60px;
     height: 30px;
 
-    background-color: #E84A5F;
     font-size: 20px;
+    background-color: #E84A5F;
 }
