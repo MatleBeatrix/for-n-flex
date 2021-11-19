@@ -31,7 +31,7 @@ button, input, textarea, select {
 }
 
 body {
-    background-image: url("/src/background.png");
+    background-image: url("src/background.png");
     background-repeat: space;
     background-size: 15px;
     background-color:#FECEAB;

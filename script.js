@@ -31,7 +31,7 @@ function loadEvent(cardnumber) {
                 root.insertAdjacentHTML("beforeend",`
                 <div id="good" class="card">
                 <h1>${item}</h1>
-                <img class="image" src="/src/happy.png" alt="logo">
+                <img class="image" src="src/happy.png" alt="logo">
                 </div>
                 `);
             }
@@ -39,7 +39,7 @@ function loadEvent(cardnumber) {
                 root.insertAdjacentHTML("beforeend",`
                 <div class="card">
                 <h1>${item}</h1>
-                <img class="image" src="/src/sad.png" alt="logo">
+                <img class="image" src="src/sad.png" alt="logo">
                 </div>
                 `);
             }
