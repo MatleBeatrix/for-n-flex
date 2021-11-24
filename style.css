@@ -1,41 +1,88 @@
 * {
-    margin:0;
-    padding:0;
-    border:0;
-    background:transparent;
-    outline:none;
-    text-decoration:none;
-    outline:none;
-    font-family:inherit;
-    box-sizing:border-box;
-  }
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  outline: none;
+  text-decoration: none;
+  outline: none;
+  font-family: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 ol, ul, li {
-  list-style:none;
-  display:block;
+  list-style: none;
+  display: block;
 }
+
 a img {
-    border: none;
+  border: none;
 }
+
 button, a {
-    cursor: pointer; color: inherit;
+  cursor: pointer;
+  color: inherit;
 }
 
 textarea {
-    resize: none;
+  resize: none;
 }
+
 button, input, textarea, select {
-    appearance: none !important; 
-    -webkit-appearance: none !important;
-    border-radius: 0;
+  -moz-appearance: none !important;
+       appearance: none !important;
+  -webkit-appearance: none !important;
+  border-radius: 0;
 }
 
 #root {
-    display: flex;
-    flex-wrap: wrap;             /*sortörés*/   
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-
+  display: -ms-grid;
+  display: grid;
+  gap: 10px;
+  height: 100vh;
 }
+
+@media screen and (max-width: 300px) {
+  #root {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 301px) and (max-width: 600px) {
+  #root {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 601px) and (max-width: 900px) {
+  #root {
+    -ms-grid-columns: (auto)[3];
+        grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media screen and (max-width: 901px) and (max-width: 1200px) {
+  #root {
+    -ms-grid-columns: (auto)[4];
+        grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  #root {
+    -ms-grid-columns: (auto)[5];
+        grid-template-columns: repeat(5, auto);
+  }
+}
+
+#root div {
+  padding: 10px;
+  border: 2px solid yellow;
+  font-size: 20px;
+  color: yellow;
+  background-color: #17141d;
+}
+/*# sourceMappingURL=style.css.map */

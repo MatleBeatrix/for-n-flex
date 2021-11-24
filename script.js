@@ -35,7 +35,7 @@ function loadEvent() {
     //console.log(generateArray("1 kiskutya"));
 
     const root = document.getElementById("root");
-    const list = generateArray(6);
+    const list = generateArray(20);
     if (list[0] !== "error") {
         for (const item of list) {
             root.insertAdjacentHTML("beforeend",`<div>${item}</div>`);
